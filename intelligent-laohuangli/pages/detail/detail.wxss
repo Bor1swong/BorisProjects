@@ -1,0 +1,121 @@
+/* pages/detail/detail.wxss */
+
+.jilu{
+  display:flex;
+  width:100%;
+    font-size: 30px;
+    font-family: "Microsoft YaHei",SimSun,sans-serif;
+}
+
+.neirong{
+  display:flex;
+ font-size: 20px;
+  font-family: SimSun,sans-serif;
+  flex-wrap: wrap;
+  
+
+}
+
+
+ .record{
+  position: fixed;
+  bottom:90px;
+  left:33%;
+} 
+
+#icon{
+
+  width: 120px;
+  height:120px;
+}
+
+.header {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px; 
+    color: #333;
+}
+
+.header .sub-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.table .row {
+    position: relative;
+    background-color: #f44;
+    overflow: hidden;
+}
+
+.table .row-yi {
+    background-color: #fe4;
+}
+
+.table .row .left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    font-size: 45px;
+    color: #fff;
+}
+
+.table .row-yi .left {
+    color: #333;
+}
+
+.table .row .right {
+    margin-left: 25%;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    min-height: 80px;
+    line-height: 1.432;
+    box-sizing: border-box;
+    background-color: #ffddd3;
+    font-size: 20px;
+}
+
+.table .row-yi .right {
+    background-color: #ffa;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+}
+
+.footer .c-day {
+  float: left;
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  background-color: #3b9aa0;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.footer .c-hover {
+  background-color: rgba(59, 154, 160, .9);
+}
+
+
+.footer .c-day.c-prev {
+  border-right: 1px solid #fff;
+}
+
+.footer .c-day.c-next {
+  border-left: 1px solid #fff;
+}

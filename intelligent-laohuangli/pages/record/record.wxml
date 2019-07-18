@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view id="scroll-content"
+    scroll-top="{{scroll_top}}"
+    scroll-y="true"
+    class="dialog-part"
+    scroll-into-view="translate-{{toView}}"
+    enable-back-to-top="true"
+    scroll-with-animation="true">
+    <view class="dialog-wrap" id="translate-empty" wx:if="{{!recording && dialogList.length == 0}}">
+      <result-bubble item="{{initTranslate}}" record-status="0"></result-bubble>
+    </view>
+    <view wx:for="{{dialogList}}" wx:key="id" class="dialog-wrap" data-index="{{index}}" catchmodaldelete="deleteItem">
+      <result-bubble item="{{item}}"
+        edit-show="{{index==dialogList.length-1}}"
+        index="{{index}}"
+        current-translate-voice="{{currentTranslateVoice}}"
+        bindtranslate="translateTextAction"
+        bindexpired="expiredAction"></result-bubble>
+    </view>
+    <view class="dialog-wrap" id="translate-recording" wx:if="{{recording}}">
+      <result-bubble item="{{currentTranslate}}" record-status="{{recordStatus}}"></result-bubble>
+    </view>
+    <view style="display:flex">
+      <button style="width:30%" bindtap="getContent">情感分析</button>
+      <button style="width:30%" bindtap="savedown">保存</button>
+    </view>
+    <view class="Sentiment">
+    <text id="result" class="{{yangshi}}">您的心情为：{{sentiment}}，概率为：{{odd}}</text>
+    </view>
+    
+    <view id="translate-fake"></view>
+
+  </scroll-view>
+
+  <view class="foot-group" catchlongpress="catchTapEvent">
+    <bottom-button button-disabled="{{bottomButtonDisabled}}"
+      bindrecordstart="streamRecord"
+      bindrecordend="streamRecordEnd"></bottom-button>
+  </view>
+</view>
